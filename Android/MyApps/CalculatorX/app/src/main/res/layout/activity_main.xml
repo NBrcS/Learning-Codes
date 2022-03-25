@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_expression"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="start"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="start"
+        android:singleLine="true"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_ClearButton"
+            style = "@style/Operator_button"
+            android:text="Clear"
+            android:layout_weight="3"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_Division"
+            style="@style/Operator_button"
+            android:text="/"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_SevenButton"
+            style = "@style/Numbers_Button"
+            android:text="7"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_EightButton"
+            style="@style/Numbers_Button"
+            android:text="8"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_NineButton"
+            style = "@style/Numbers_Button"
+            android:text="9"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_MultiplicationButton"
+            style="@style/Operator_button"
+            android:text="x"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_FourButton"
+            style = "@style/Numbers_Button"
+            android:text="4"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_FiveButton"
+            style="@style/Numbers_Button"
+            android:text="5"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_SixButton"
+            style = "@style/Numbers_Button"
+            android:text="6"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_SubButton"
+            style="@style/Operator_button"
+            android:text="-"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_OneButton"
+            style = "@style/Numbers_Button"
+            android:text="1"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_TwoButton"
+            style="@style/Numbers_Button"
+            android:text="2"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_ThreeButton"
+            style = "@style/Numbers_Button"
+            android:text="3"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_SumButton"
+            style="@style/Operator_button"
+            android:text="+"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_PointButton"
+            style = "@style/Numbers_Button"
+            android:text="."
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_ZeroButton"
+            style="@style/Numbers_Button"
+            android:text="0"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/BackSpaceButton"
+            style = "@style/Numbers_Button"
+            android:src="@drawable/backspace"
+            android:layout_gravity="center"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_EqualButton"
+            style="@style/Operator_button"
+            android:text="="
+            />
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lucky</string>
+    <string name="textResult">No numbers selected</string>
+    <string name="textEnunciate">Ruffle a number betweenn 0 and 100</string>
+    <string name="bt_play">Play</string>
+    <string name="bt_clean">Clean</string>
+</resources>

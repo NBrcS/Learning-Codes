@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">myNewsApp</string>
+    <string name="textTitle">Learning to edit videos and images</string>
+    <string name="textData">11/03/2022</string>
+    <string name="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit lacus id tortor sagittis commodo.
+        In ac nisl elementum, aliquet nisl et, aliquam est. Etiam eget rhoncus turpis, ac tempus felis. Nam non ultrices est, sit amet consectetur magna.
+        Vivamus posuere a nunc non luctus. Sed imperdiet tincidunt diam, non tincidunt arcu fermentum sed. Praesent suscipit ipsum nec condimentum auctor.
+        Pellentesque bibendum ac ex eget scelerisque. Donec neque lectus, consectetur id posuere nec, dictum at sem. Aliquam erat volutpat.
+        Duis augue libero, sodales nec pellentesque id, fringilla sed nibh. Nulla facilisi. Donec vulputate odio in cursus hendrerit.
+
+        Praesent libero enim, iaculis in ornare sit amet, fringilla nec nunc. Nullam sed consectetur elit.
+        Integer dui eros, tristique porta erat non, auctor mollis nunc. Mauris id lectus tortor.
+        Nullam bibendum consequat purus. Curabitur id justo odio. Duis in nisi purus. In congue suscipit est, et hendrerit nisl ultrices id.
+        Aliquam erat volutpat. Curabitur eu arcu non est faucibus dictum. Maecenas turpis diam, congue accumsan ultrices id, semper vel dolor.
+        Pellentesque bibendum luctus nibh, quis vestibulum orci dignissim pretium.
+
+        Sed dictum mattis dapibus. Vestibulum vitae laoreet justo. Morbi laoreet blandit elit, laoreet fringilla tellus tristique sed.
+        Nulla in diam non justo tincidunt mattis eget at nulla. Suspendisse nec ultrices quam.
+        Cras venenatis, justo vitae vehicula dapibus, tellus lorem tincidunt felis, a tempus dolor tortor eget nisl.
+        Sed accumsan, ante in ornare tempor, leo neque cursus augue, id fringilla risus mauris sit amet dolor.
+        Fusce molestie laoreet nunc eu dapibus. Sed non quam eu mi auctor interdum ut sagittis lectus.
+        Etiam ac odio porta, varius nisi eget, malesuada elit. Nulla gravida auctor sodales. Sed est dolor, lacinia at feugiat quis, placerat vitae velit.
+        Sed a lacus nunc. Phasellus at eros egestas, accumsan mauris at, hendrerit enim.
+
+        Suspendisse fringilla dictum ligula a congue. Donec eu augue non erat blandit volutpat eu at tellus.
+        In hac habitasse platea dictumst. Fusce viverra ut est sit amet bibendum.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur interdum sapien eros, quis pretium urna fringilla porttitor.
+        Sed ut quam vitae sapien auctor vestibulum.</string>
+        <string name="bt_next">Next</string>
+    <string name="bt_previous">Previous</string>
+    <string name="textAuthor">NBR_cs</string>
+</resources>

@@ -1,0 +1,1 @@
+I'm Training the C++ language, the git and github systems

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_principalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundDarkGray"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/txt_textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeTextType="uniform"
+            android:drawableTop="@drawable/ic_down_arrow_white_24dp"
+            android:text="@string/videoName"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_textSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/seasonEpisode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_textTitle"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txt_textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            app:layout_constraintBottom_toBottomOf="@+id/sk_timeBar"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/sk_timeBar" />
+
+        <TextView
+            android:id="@+id/txt_textFinalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timeFinal"
+            app:layout_constraintBottom_toBottomOf="@+id/sk_timeBar"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/sk_timeBar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <ImageView
+            android:id="@+id/im_imageComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/commentButton"
+            app:layout_constraintBottom_toBottomOf="@+id/im_imageVolume"
+            app:layout_constraintEnd_toStartOf="@+id/im_imageVolume"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/im_imageVolume"
+            app:srcCompat="@drawable/ic_insert_comment_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imageVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/volumeButton"
+            app:layout_constraintBottom_toBottomOf="@+id/im_imageFavorite"
+            app:layout_constraintEnd_toStartOf="@+id/im_imageFavorite"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/im_imageComment"
+            app:layout_constraintTop_toTopOf="@+id/im_imageFavorite"
+            app:srcCompat="@drawable/ic_volume_up_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imageFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/favoriteButton"
+            app:layout_constraintBottom_toTopOf="@+id/im_imageVideo"
+            app:layout_constraintEnd_toStartOf="@+id/im_imageCopy"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/im_imageVolume"
+            app:layout_constraintTop_toBottomOf="@+id/txt_textSeason"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_star_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imageCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/copyButton"
+            app:layout_constraintBottom_toBottomOf="@+id/im_imageFavorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/im_imageFavorite"
+            app:layout_constraintTop_toTopOf="@+id/im_imageFavorite"
+            app:srcCompat="@drawable/ic_filter_none_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imageRestart"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/restartButton"
+            app:layout_constraintBottom_toBottomOf="@+id/im_imagePlay"
+            app:layout_constraintEnd_toStartOf="@+id/im_imagePlay"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/im_imagePlay"
+            app:srcCompat="@drawable/ic_settings_backup_restore_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imagePlay"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/playButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/im_imagePause"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/im_imageRestart"
+            app:layout_constraintTop_toBottomOf="@+id/sk_timeBar"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_play_arrow_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imagePause"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/pauseButton"
+            app:layout_constraintBottom_toBottomOf="@+id/im_imagePlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/im_imagePlay"
+            app:layout_constraintTop_toTopOf="@+id/im_imagePlay"
+            app:srcCompat="@drawable/ic_pause_white_24dp" />
+
+        <ImageView
+            android:id="@+id/im_imageVideo"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/videoImage"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_textSeason"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/lcdp"
+            tools:layout_editor_absoluteX="26dp" />
+
+        <SeekBar
+            android:id="@+id/sk_timeBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_textFinalTime"
+            app:layout_constraintStart_toEndOf="@+id/txt_textTime"
+            app:layout_constraintTop_toBottomOf="@+id/im_imageVideo"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Phrase</string>
+    <string name="button">New phrase</string>
+    <string name="firsPhrase">See your daily motivational phrase!!</string>
+</resources>

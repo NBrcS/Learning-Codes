@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LuckApp</string>
+    <string name="txt_btPlay">Play</string>
+    <string name="txt_btClean">Clean</string>
+</resources>
