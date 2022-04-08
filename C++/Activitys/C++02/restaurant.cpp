@@ -60,44 +60,37 @@ class Restaurant{
 int main(){
     cout << fixed << setprecision(2);
 
-    string code;
-    string s_info;
-    int i_info;
-    double d_info;
+    string code, desc;
+    int how, table;
+    double price;
 
     Restaurant restaurant;
-    Order order;
-    do{
+    while(1){
         getline(cin, code);
-        order.setNumber(code);
+            if(code == "-1") break;
+        getline(cin, desc);
 
-        getline(cin, s_info);
-        order.setDesc(s_info);
-
-        cin >> i_info;
+        cin >> how;
         cin.ignore();
-        order.setHowMany(i_info);
-
-        cin >> d_info;
+        cin >> price;
         cin.ignore();
-        order.setPrice(d_info);
-
-        cin >> i_info;
+        cin >> table;
         cin.ignore();
-        restaurant.addOrder(order, i_info);
-    }while(code != "-1");
+
+        Order order = Order(code, desc, how, price); 
+        restaurant.addOrder(order, table);
+    }
         
-    for(int i = 0; i < Size_Max; i++){
+    for(int i = 0; i < Size_Max - 1; i++){
         if(restaurant.getTable(i).getOrder(0).getHowMany() != 0){
 
-            cout << "Mesa " + i << endl;
+            cout << "Mesa " << i << endl;
             restaurant.getTable(i).printAccount();
             cout << "Total: R$ " << restaurant.getTable(i).totalCalculate() << endl << endl;
 
         }
     }
     cout << "Total Restaurante: R$ " << restaurant.totalRestaurantCalculate();
-
 
     return 0;
 }
@@ -206,11 +199,7 @@ void RestaurantTable::printAccount(){
 
 //Restaurant implements
 void Restaurant::addOrder(Order o, int tableIndex){
-    for(int i = 0; i < Size_Max; i++){
-        if(this->table[i].getOrder(0).getHowMany() != 0){
-            this->table[i].addOrder(o);
-        }
-    }
+    this->table[tableIndex].addOrder(o);
 }
 double Restaurant::totalRestaurantCalculate(){
     double sum = 0.0;
