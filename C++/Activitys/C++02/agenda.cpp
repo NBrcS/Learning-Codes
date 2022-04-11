@@ -14,8 +14,7 @@ class Address{
         string cep;
 
     public:
-        Address(){};
-        Address(string, string, string, string, string, string);
+        Address(string = "Undefined", string = "Undefined", string = "Undefined", string = "Undefined", string = "Undefined", string = "Undefined");
         
         string toString();
 };
