@@ -1,177 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="32dp"
-    tools:context=".MainActivity">
+    android:fillViewport="true"
+    >
 
 
-    <Button
-        android:id="@+id/sendButon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="changeName"
-        android:text="send"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="cleanBoxes"
-        android:text="Clean"
-        app:layout_constraintBottom_toBottomOf="@+id/sendButon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sendButon"
-        app:layout_constraintTop_toTopOf="@+id/sendButon" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/printInfo"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="16dp"
-        android:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendButon" />
 
-    <EditText
-        android:id="@+id/nameBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/getEmail"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/sendButon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Email" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="16dp"
+            android:onClick="changeName"
+            android:text="send"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-        <CheckBox
-            android:id="@+id/checkCar1"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 - Nissan GT R35 " />
-
-        <CheckBox
-            android:id="@+id/checkCar2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2 - Toyota Supra mk5" />
-
-        <CheckBox
-            android:id="@+id/checkCar3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3 - Dodge Challenger 2018" />
-
-        <CheckBox
-            android:id="@+id/checkCar4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4 - Porsche GT3 RS" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="137dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+            android:onClick="cleanBoxes"
+            android:text="Clean"
+            app:layout_constraintBottom_toBottomOf="@+id/sendButon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sendButon"
+            app:layout_constraintTop_toTopOf="@+id/sendButon" />
 
         <TextView
-            android:id="@+id/car1Stats"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"/>
+            android:id="@+id/printInfo"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thisSex" />
 
-        <TextView
-            android:id="@+id/car2Stats"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"/>
-
-        <TextView
-            android:id="@+id/car3Stats"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"/>
-
-        <TextView
-            android:id="@+id/car4Stats"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"/>
-    </LinearLayout>
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="333dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sex">
-
-        <RadioButton
-            android:id="@+id/Male"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/nameBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/Female"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Female" />
-    </RadioGroup>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameBox">
 
-    <TextView
-        android:id="@+id/sex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="sex:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/getEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+            <CheckBox
+                android:id="@+id/checkCar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 - Nissan GT R35 "
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <CheckBox
+                android:id="@+id/checkCar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="2 - Toyota Supra mk5" />
+
+            <CheckBox
+                android:id="@+id/checkCar3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3 - Dodge Challenger 2018"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <CheckBox
+                android:id="@+id/checkCar4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4 - Porsche GT3 RS"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="137dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+            <TextView
+                android:id="@+id/car1Stats"
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:id="@+id/car2Stats"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <TextView
+                android:id="@+id/car3Stats"
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:id="@+id/car4Stats"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sex">
+
+            <RadioButton
+                android:id="@+id/Male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/Female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="sex:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <TextView
+            android:id="@+id/thisSex"
+            android:layout_width="128dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sendButon" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:onClick="callToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ToggleButton"
+            app:layout_constraintEnd_toStartOf="@+id/switch1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggleStat" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch"
+            app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toggleButton"
+            app:layout_constraintTop_toTopOf="@+id/toggleButton" />
+
+        <TextView
+            android:id="@+id/toggleStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toStartOf="@+id/switchStat"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/printInfo" />
+
+        <TextView
+            android:id="@+id/switchStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/toggleStat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toggleStat"
+            app:layout_constraintTop_toTopOf="@+id/toggleStat" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

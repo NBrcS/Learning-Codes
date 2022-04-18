@@ -40,7 +40,7 @@ class WorkerPerHour : public Worker{
 
 int main(){
     int N, type;
-    Worker * worker;
+    Worker *worker;
 
     cin >> N; cin.ignore();
     while(N--){
@@ -49,7 +49,6 @@ int main(){
        
         switch ( type ) {
             case 1:
-
                 double salary;
 
                 getline(cin, name);
@@ -58,9 +57,9 @@ int main(){
                 worker = new WorkerWithSalary(salary);
                 worker->setName(name);
 
-                cout << worker->getName() << " - ";
-                cout << "Semanal: R$ " << worker->weeklyPaymentCalculate() << " - ";
-                cout << "Mensal: R$ " << worker->getSalary() << endl;
+                cout << worker->getName() << " - "
+                     << "Semanal: R$ " << worker->weeklyPaymentCalculate() << " - "
+                     << "Mensal: R$ " << worker->getSalary() << endl;
 
                 break;
             case 2:
@@ -76,9 +75,9 @@ int main(){
                 worker->weeklyPaymentCalculate(hours);
                 worker->setName(name);
 
-                cout << worker->getName() << " - ";
-                cout << "Semanal: R$ " << worker->weeklyPaymentCalculate(hours) << " - ";
-                cout << "Mensal: R$ " << worker->getSalary() << endl;
+                cout << worker->getName() << " - "
+                     << "Semanal: R$ " << worker->weeklyPaymentCalculate(hours) << " - "
+                     << "Mensal: R$ " << worker->getSalary() << endl;
 
                 break;
             default:
@@ -132,8 +131,6 @@ double WorkerPerHour::weeklyPaymentCalculate(int weeklyHours){
         weeklyPayment = this->hourValue * 40 + excedent;
     }
     else weeklyPayment = this->hourValue * weeklyHours;
-    
-
     this->salary = weeklyPayment * 4;
 
     return weeklyPayment;

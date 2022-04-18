@@ -5,25 +5,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView info;
+    private TextView info, sexTypeText;
     private EditText getName;
     private TextInputEditText getEmail;
 
     private CheckBox car1, car2, car3, car4;
     private TextView car1Stats, car2Stats, car3Stats, car4Stats;
 
-    private RadioButton male, female;
     private RadioGroup sex;
-    private String sexType;
+
+    private ToggleButton toggle;
+    private TextView toggleStats;
+    private Switch switcher;
+    private TextView switcherStats;
 
 
     @Override
@@ -44,15 +52,37 @@ public class MainActivity extends AppCompatActivity {
         car4 = findViewById(R.id.checkCar4);
         car4Stats = findViewById(R.id.car4Stats);
 
-        male = findViewById(R.id.Male);
-        female= findViewById(R.id.Female);
         sex = findViewById(R.id.radioGroup);
-        sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        sexTypeText = findViewById(R.id.thisSex);
+        radio();
+
+        toggle = findViewById(R.id.toggleButton);
+        toggleStats = findViewById(R.id.toggleStat);
+        switcher = findViewById(R.id.switch1);
+        switcherStats = findViewById(R.id.switchStat);
+
+        switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.Male) { sexType = "male"; }
-                else if(checkedId == R.id.Female) { sexType = "female"; }
-            }});
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if( b ){
+                    switcherStats.setText("on");
+                }
+                else{
+                    switcherStats.setText("off");
+                }
+            }
+        });
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if( b ){
+                    toggleStats.setText("on");
+                }
+                else{
+                    toggleStats.setText("off");
+                }
+            }
+        });
 
         getName.setText("");
         getEmail.setText("");
@@ -77,12 +107,22 @@ public class MainActivity extends AppCompatActivity {
         }else car4Stats.setText("");
     }
 
+    public void radio(){
+        sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.Male) { sexTypeText.setText("male"); }
+                else if(checkedId == R.id.Female) { sexTypeText.setText("female"); }
+            }});
+    }
+
     public void changeName(View view){
 
         String name = getName.getText().toString();
         String email = getEmail.getText().toString();
+        String text ="Name: " + name + "\nEmail: " + email + "\n";
 
-        info.setText("Name: " + name + "\nEmail: " + email + "\n" + sexType);
+        info.setText(text);
 
         checkbox();
     }
@@ -97,6 +137,17 @@ public class MainActivity extends AppCompatActivity {
         car2Stats.setText("");
         car3Stats.setText("");
         car4Stats.setText("");
+    }
+    public void callToast(View view){
+        ImageView image = new ImageView( getApplicationContext() );
+        image.setImageResource( android.R.drawable.alert_dark_frame);
+
+        Toast toast = new Toast( getApplicationContext() );
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView( image );
+        toast.show();
+
+        //Toast.makeText(this, "seeloko chamei a torrada", Toast.LENGTH_SHORT).show();
     }
 
 }
