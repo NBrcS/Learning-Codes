@@ -158,10 +158,10 @@ Immobile::Immobile(int type){
 
 //House implements
 void House::printAtributes(){
-    cout << this->getName() << " para " << this->getState() << ". ";
-    cout << this->getFloorNumber() << " pavimentos, " << this->getRoomsNumber() << " quartos, ";
-    cout << this->getLandArea() << "m2 de área de terreno e " << this->getBuiltUpLandArea() << "m2 de área construída. ";
-    cout << "R$ " << this->getPrice() << "." << endl;;
+    cout << this->getName() << " para " << this->getState() << ". "
+         << this->getFloorNumber() << " pavimentos, " << this->getRoomsNumber() << " quartos, "
+         << this->getLandArea() << "m2 de área de terreno e " << this->getBuiltUpLandArea() << "m2 de área construída. "
+         << "R$ " << this->getPrice() << "." << endl;;
 
 }
 void House::readAtributes(){
@@ -170,10 +170,10 @@ void House::readAtributes(){
 
     getline(cin, this->state);
 
-    cin >> this->floorNumber;
-    cin >> this->roomsNumber;
-    cin >> this->landArea;
-    cin >> this->builtUpLandArea;
+    cin >> this->floorNumber
+        >> this->roomsNumber
+        >> this->landArea
+        >> this->builtUpLandArea;
 
     cin.ignore();
 }
@@ -181,11 +181,11 @@ void House::readAtributes(){
 
 //Apartament implements
 void Apartament::printAtributes(){
-    cout << this->getName() << " para " << this->getState() << ". ";
-    cout << this->getArea() << "m2 de área, " << this->getRoomsNumber() << " quartos, ";
-    cout << this->getFloor() << " andar(es), " << this->getCondominiumValue() << " de condomínio, ";
-    cout << this->getParkingSpaces() << " vaga(s) de garagem. ";
-    cout << "R$ " << this->getPrice() << "." << endl;;
+    cout << this->getName() << " para " << this->getState() << ". "
+         << this->getArea() << "m2 de área, " << this->getRoomsNumber() << " quartos, "
+         << this->getFloor() << " andar(es), " << this->getCondominiumValue() << " de condomínio, "
+         << this->getParkingSpaces() << " vaga(s) de garagem. "
+         << "R$ " << this->getPrice() << "." << endl;
 
 }
 void Apartament::readAtributes(){
@@ -194,21 +194,20 @@ void Apartament::readAtributes(){
 
     getline(cin, this->state);
 
-    cin >> this->area;
-    cin >> this->roomsNumber;
-    cin >> this->floor;
-    cin >> this->condominiumValue;
-    cin >> this->parkingSpaces;
-
+    cin >> this->area
+        >> this->roomsNumber
+        >> this->floor
+        >> this->condominiumValue
+        >> this->parkingSpaces;
     cin.ignore();
 }
 
 
 //Terrain implements
 void Terrain::printAtributes(){
-    cout << this->getName() << " para " << this->getState() << ". ";
-    cout << this->getArea() << "m2 de área de terreno. ";
-    cout << "R$ " << this->getPrice() << "." << endl;
+    cout << this->getName() << " para " << this->getState() << ". "
+         << this->getArea() << "m2 de área de terreno. "
+         << "R$ " << this->getPrice() << "." << endl;
 }
 void Terrain::readAtributes(){
     cin >> this->price;
