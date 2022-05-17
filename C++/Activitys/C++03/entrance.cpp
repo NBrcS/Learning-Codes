@@ -111,7 +111,7 @@ class Local
 
     public:
         Local(int = 0, string = "Undefined");
-        ~Local();
+        virtual ~Local();
 
 
         int getType() { return type; }
@@ -134,6 +134,7 @@ int main()
 
     Local local;
     Entrance* generic;
+    Entrance* generic2;
 
     for(int i = 0; i < 3; i++)
     {
@@ -152,6 +153,7 @@ int main()
             cin.ignore();
 
             generic = new Vaccine(type, howManyDoses, pause, howMany, 1, unitaryValue, dueDate, name, manufacter);
+            generic2 = new Vaccine(type, howManyDoses, pause, howMany, 1, unitaryValue, dueDate, name, manufacter);
         }
         else if(i == 1)
         {
@@ -160,6 +162,7 @@ int main()
             getline(cin, availability);
 
             generic = new Medical(dosage, management, availability, howMany, 2, unitaryValue, dueDate, name, manufacter);
+            generic2 = new Medical(dosage, management, availability, howMany, 2, unitaryValue, dueDate, name, manufacter);
         }
         else if(i == 2)
         {
@@ -167,13 +170,13 @@ int main()
             getline(cin, desc);
 
             generic = new IPE(type, desc, howMany, 3, unitaryValue, dueDate, name, manufacter);
+            generic2 = new IPE(type, desc, howMany, 3, unitaryValue, dueDate, name, manufacter);
         }
 
         local.addEntranceArr(generic, i);
-        local.addEntranceVec(generic);
-    }
 
-    delete &local;
+        local.addEntranceVec(generic2);
+    }
 
     return 0;
 }
@@ -256,100 +259,11 @@ Local::~Local()
         delete(entranceArr[i]);
     }
 
-
-    /*
-    *
-    *          Using destructor
-    * 
-    */
-    /*
-    cout << "(erase) begin the loop" << endl;
-    int size = entranceVec.size();
-    for (int i = 0; i < size; i++)
+    for(int i = 0; i < entranceVec.size(); i++)
     {
-
-        cout << "(erase) loop " << endl;
-        entranceVec.back()->~Entrance();
-
-        cout << "(erase) end loop " << endl;
+        delete(entranceVec[i]);
     }
 
-    cout << "(erase) end all loop" << endl;
-    */
-
-    /*
-    *
-    *       Using clear()
-    *   
-    */
-    /*
-    cout << "Begin of clear" << end;
-    entranceVec.clear();
-
-    cout << "end of clear" << end;
-    */
-
-   /*
-    *
-    *           Using delete[]
-    *
-    */
-    /*
-    cout << "(erase) begin the loop" << endl;
-    int size = entranceVec.size();
-    for (int i = 0; i < size; i++)
-    {
-
-        cout << "(erase) loop " << endl;
-        delete &entranceVec[i];
-
-        cout << "(erase) end loop " << endl;
-    }
-
-    cout << "(erase) end all loop" << endl;
-    */
-
-
-    /*
-    *
-    *           Using delete&
-    * 
-    */
-    /*
-    cout << "(erase) begin the loop" << endl;
-    int size = entranceVec.size();
-    for (int i = 0; i < size; i++)
-    {
-
-        cout << "(erase) loop " << endl;
-        delete &entranceVec.at(i);
-
-        cout << "(erase) end loop " << endl;
-    }
-
-    cout << "(erase) end all loop" << endl;
-    */
-
-
-    /*
-    *
-    *           Using pop_back()
-    * 
-    */
-    /*
-    cout << "(erase) begin the loop" << endl;
-    while (!entranceVec.empty())
-    {
-
-        cout << "(erase) loop " << endl;
-        entranceVec.pop_back();
-
-        cout << "(erase) end loop " << endl;
-    }
-
-    cout << "(erase) end all loop" << endl;
-    */
-    
 }
 
 void Local::addEntranceArr(Entrance* ent_, int index_)
