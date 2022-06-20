@@ -54,7 +54,7 @@ class Person
         void setTipo(int tipo_) { tipo = tipo_; }
 };
 
-void operator<< (ostream& out, Person p)
+ostream& operator<< (ostream& out, Person p)
 {
     switch(p.getTipo())
     {
@@ -68,6 +68,8 @@ void operator<< (ostream& out, Person p)
                     + "tel: " + p.getTelefone() + ", "
                     + "CPF: " + p.getCpf();
     }
+
+    return out;
 }
 
 
@@ -119,7 +121,6 @@ int main()
             p->setCpf(cpf);
 
         }
-        cout << *p;
-        cout << endl;
+        cout << *p << endl;
     }
 }
