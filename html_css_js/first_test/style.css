@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(17, 8, 71);
+    width: 320px;
+    height: 180px;
+    margin: auto;
+}
+
+#title,
+.subtitle,
+.post-title {
+    color: whitesmoke;
+    border-color: black;
+}
+
+.post-title {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.post {
+    background-color: black;
+    padding: 16px;
+    border-radius: 2%;
+    margin: 0px;
+}
+
+.photo {
+    align-items: center;
+    margin: 0px;
+    border-radius: 5%;
+    width: 90%;
+    height: 90%;
+}
