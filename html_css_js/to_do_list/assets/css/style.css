@@ -1,0 +1,138 @@
+*{
+    font-family: 'Brush Script MT', cursive;;
+}
+
+body{
+    background-image: url(/assets/img/106903-ONCZPN-850.jpg);
+    background-position: center;
+    background-size: 100%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.big-box{
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px 50px;
+    min-height: 200px;
+    min-width: 100px;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.new-item-form{
+    display: flex;
+    margin-bottom: 70px;
+}
+
+#new-item-input{
+    background-image: linear-gradient(to right, rgb(31, 31, 31), rgb(85, 84, 2));
+    color: white;
+    padding: 10px;
+    border-radius: 3%;
+    border-width: 0px;
+    min-width: 250px;
+}
+
+#new-item-button{
+    background-image: linear-gradient(to right, rgb(234, 0, 255), rgb(255, 238, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border:none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+#item-list-form{
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    min-height: 40px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: rgb(111, 68, 128);
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox input:checked{
+    background-image: url(/assets/img/icons8-checked-checkbox-64.png);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background-position: center;
+    background-size: 40px;
+}
+
+input[type="checkbox"]:hover{
+    background-color: rgba(44, 44, 44, 0.411);
+}
+
+#item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    width: auto;
+
+}
+
+.text{
+    background-color: rgb(58, 58, 58);
+    border-width: 0px;
+    border-radius: 3%;
+    color: white;
+    padding: 10px 15px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.edit{
+    background-image: linear-gradient(to right, rgb(234, 0, 255), rgb(255, 238, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border:none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.remove{
+    background-color: rgba(240, 248, 255, 0);
+    border-width: 0px;
+    color: crimson;
+    font-size: 15px;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+
