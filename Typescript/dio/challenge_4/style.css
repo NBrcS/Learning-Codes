@@ -1,0 +1,107 @@
+*{
+    font-family: OCR A Std, monospace;
+}
+
+body{
+    background-image: linear-gradient(to bottom, black, rgb(104, 104, 104), black);
+    background-position: top;
+    min-height: 550px;
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+    padding: 25px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    min-width: 200px;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    border: white solid 1px;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+ button{
+    min-height: 25px;
+    min-width: 80px;
+    border-radius: 2px;
+    color: white;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 2%;
+    background-color: rgb(102, 101, 101);
+    cursor: pointer;
+}
+
+ul{
+    background-color: rgb(49, 49, 49);
+    min-width: 1200px;
+    padding: 10px;
+}
+
+li{
+    display: flex;
+    height: auto;
+    max-height: 450px;
+    margin: 10px;
+    border-color: gray;
+    border-width: 5px;
+    border-radius: 2px;
+    border-style: ridge;
+    padding: 5px;
+    color: white;
+}
+
+li img{
+    height: 225px;
+    padding: 5px;
+}
+
+.li-right{
+    justify-content: right;
+}
+
+.li-left{
+    justify-content: left;
+}
+
+button:disabled{
+    color: rgb(116, 114, 114);
+    background-color: rgb(70, 68, 68);
+}
+
+#search-container{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+#search-container h1{
+    color: white;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-title{
+    font-size: large;
+}
+
+.content-synopsis{
+    font-size: medium;
+}
+

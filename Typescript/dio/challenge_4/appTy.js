@@ -53,6 +53,8 @@ var listId = '7101979';
 var loginButton = document.getElementById('login-button');
 var searchButton = document.getElementById('search-button');
 var searchContainer = document.getElementById('search-container');
+var mainContainer = document.getElementById('main-container');
+var alternateLiLayout = 'li-left';
 loginButton.addEventListener('click', function () { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -70,7 +72,7 @@ loginButton.addEventListener('click', function () { return __awaiter(_this, void
     });
 }); });
 searchButton.addEventListener('click', function () { return __awaiter(_this, void 0, void 0, function () {
-    var lista, query, listaDeFilmes, ul, _i, _a, item, li, img, src;
+    var lista, query, listaDeFilmes, ul, _i, _a, item, li, img, src, content, title, synopsis, content, title, synopsis, src;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
@@ -88,24 +90,63 @@ searchButton.addEventListener('click', function () { return __awaiter(_this, voi
                     item = _a[_i];
                     li = document.createElement('li');
                     img = document.createElement('img');
-                    li.appendChild(document.createTextNode(String(item.original_title)));
-                    if (!item.poster_path) {
-                        console.log("".concat(item.original_title, "'s poster not found"));
+                    li.setAttribute("class", alternateLiLayout);
+                    if (alternateLiLayout === 'li-left') {
+                        if (!item.poster_path) {
+                            console.log("".concat(item.original_title, "'s poster not found"));
+                        }
+                        else {
+                            src = "https://image.tmdb.org/t/p/w500".concat(item.poster_path);
+                            img.setAttribute("src", src);
+                            img.setAttribute("alt", "movie poster");
+                            li.appendChild(img);
+                        }
+                        content = document.createElement('div');
+                        title = document.createElement('h6');
+                        synopsis = document.createElement('p');
+                        content.setAttribute("class", "content-container");
+                        title.setAttribute("class", "content-title");
+                        synopsis.setAttribute("class", "content-synopsis");
+                        title.innerHTML = String(item.original_title);
+                        synopsis.innerHTML = String(item.overview);
+                        content.appendChild(title);
+                        content.appendChild(synopsis);
+                        li.appendChild(content);
+                        alternateLiLayout = 'li-right';
                     }
                     else {
-                        src = "https://image.tmdb.org/t/p/w500".concat(item.poster_path);
-                        img.setAttribute("src", src);
-                        img.setAttribute("alt", "movie poster");
-                        li.appendChild(img);
+                        content = document.createElement('div');
+                        title = document.createElement('h6');
+                        synopsis = document.createElement('p');
+                        content.setAttribute("class", "content-container");
+                        title.setAttribute("class", "content-title");
+                        synopsis.setAttribute("class", "content-synopsis");
+                        title.innerHTML = String(item.original_title);
+                        synopsis.innerHTML = String(item.overview);
+                        content.appendChild(title);
+                        content.appendChild(synopsis);
+                        li.appendChild(content);
+                        if (!item.poster_path) {
+                            console.log("".concat(item.original_title, "'s poster not found"));
+                        }
+                        else {
+                            src = "https://image.tmdb.org/t/p/w500".concat(item.poster_path);
+                            img.setAttribute("src", src);
+                            img.setAttribute("alt", "movie poster");
+                            li.appendChild(img);
+                        }
+                        alternateLiLayout = 'li-left';
                     }
                     ul.appendChild(li);
                 }
                 console.log(listaDeFilmes);
-                searchContainer.appendChild(ul);
+                mainContainer.appendChild(ul);
                 return [2 /*return*/];
         }
     });
 }); });
+function createMovieText(title, synopsis) {
+}
 function preencherSenha() {
     var pass = document.getElementById('senha');
     if (!pass) {

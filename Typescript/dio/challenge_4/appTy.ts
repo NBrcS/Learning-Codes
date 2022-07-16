@@ -21,6 +21,8 @@ let listId: string = '7101979';
 let loginButton = document.getElementById('login-button') as HTMLButtonElement;
 let searchButton = document.getElementById('search-button')!;
 let searchContainer = document.getElementById('search-container') as HTMLDivElement;
+let mainContainer = document.getElementById('main-container') as HTMLDivElement;
+let alternateLiLayout = 'li-left';
 
 loginButton.addEventListener('click', async () => {
   await criarRequestToken();
@@ -33,30 +35,87 @@ searchButton.addEventListener('click', async () => {
 	if (lista) {
 		lista.outerHTML = "";
 	}
+
 	let query = document.getElementById('search') as HTMLInputElement;
 	let listaDeFilmes = await procurarFilme(query.value);
 	let ul = document.createElement('ul');
-	ul.id = "lista"
+	ul.id = "lista";
+
 	for (const item of listaDeFilmes.results) {
 		let li = document.createElement('li');
 		let img = document.createElement('img');
-		li.appendChild(document.createTextNode(String(item.original_title)));
 
-		if(!item.poster_path){
-			console.log(`${item.original_title}'s poster not found`);
+		li.setAttribute("class", alternateLiLayout);
+		if(alternateLiLayout === 'li-left'){
+			if(!item.poster_path){
+				console.log(`${item.original_title}'s poster not found`);
+			}
+			else{
+				let src = `https://image.tmdb.org/t/p/w500${item.poster_path}`
+				img.setAttribute("src", src);
+				img.setAttribute("alt", "movie poster");
+				li.appendChild(img);
+			}
+			
+			let content = document.createElement('div');
+			let title = document.createElement('h6');
+			let synopsis = document.createElement('p');
+
+			content.setAttribute("class", "content-container");
+			title.setAttribute("class", "content-title");
+			synopsis.setAttribute("class", "content-synopsis");
+
+			title.innerHTML = String(item.original_title);
+			synopsis.innerHTML = String(item.overview);
+
+			content.appendChild(title);
+			content.appendChild(synopsis);
+
+			li.appendChild(content);
+
+			alternateLiLayout = 'li-right';
+		} 
+		else {
+			
+			let content = document.createElement('div');
+			let title = document.createElement('h6');
+			let synopsis = document.createElement('p');
+
+			content.setAttribute("class", "content-container");
+			title.setAttribute("class", "content-title");
+			synopsis.setAttribute("class", "content-synopsis");
+
+			title.innerHTML = String(item.original_title);
+			synopsis.innerHTML = String(item.overview);
+
+			content.appendChild(title);
+			content.appendChild(synopsis);
+
+			li.appendChild(content);
+
+			if(!item.poster_path){
+				console.log(`${item.original_title}'s poster not found`);
+			}
+			else{
+				let src = `https://image.tmdb.org/t/p/w500${item.poster_path}`
+				img.setAttribute("src", src);
+				img.setAttribute("alt", "movie poster");
+				li.appendChild(img);
+			}
+
+			alternateLiLayout = 'li-left';
 		}
-		else{
-			let src = `https://image.tmdb.org/t/p/w500${item.poster_path}`
-			img.setAttribute("src", src);
-			img.setAttribute("alt", "movie poster");
-			li.appendChild(img);
-		}
-		
-		ul.appendChild(li)
+
+		ul.appendChild(li);
 	}
+
 	console.log(listaDeFilmes);
-	searchContainer.appendChild(ul);
-})
+	mainContainer.appendChild(ul);
+});
+
+function createMovieText(title: string, synopsis: string){
+
+}
 
 function preencherSenha() {
     let pass = document.getElementById('senha') as HTMLInputElement;
