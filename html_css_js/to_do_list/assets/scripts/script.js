@@ -1,82 +1,58 @@
-const LIST = document.getElementById("item-list-form");
-const SUBMIT_BUTTON = document.getElementById("new-item-button");
-
-function add()
-{
-    console.log("init");
-
-
-    const content = document.getElementById("new-item-input");
-    if(!content)
-    {
-        alert("Please, add a task on the text box");
-        console.log(content);
-        return;
-    }
-    console.log(content);
-
-    LIST.appendChild( ( ) => {
-        let item = document.createElement("div");
-
-        // Adding the checkbox
-        item.appendChild( ( ) =>{
-            let checkbox = document.createElement("div");
-            checkbox.setAttribute("class", "checkbox");
-
-            checkbox.appendChild( ( ) =>{
-                let checkInput = createElement("input");
-                checkInput.setAttribute("type", "checkbox");
-
-                return checkInput;
-            });
-
-            return checkbox;
+window.addEventListener('load', function () {
+    var form = document.querySelector("#new-item-form");
+    var input = document.querySelector("#new-item-input");
+    var list_element = document.querySelector("#item-list-form");
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var content = input.value;
+        if (!content) {
+            alert("Please, add a task in th text box");
+            return;
+        }
+        console.log(typeof content);
+        var item_element = document.createElement('div');
+        item_element.classList.add("item");
+        var checkbox = document.createElement('div');
+        checkbox.classList.add("checkbox");
+        var check_input = document.createElement('input');
+        check_input.type = "checkbox";
+        checkbox.appendChild(check_input);
+        var item_content = document.createElement('div');
+        item_content.classList.add("content");
+        var item_content_input = document.createElement('input');
+        item_content_input.type = "text";
+        item_content_input.className = "text";
+        item_content_input.readOnly = true;
+        item_content_input.value = content;
+        item_content.appendChild(item_content_input);
+        var buttons_div = document.createElement('div');
+        buttons_div.className = "buttons";
+        var button_edit = document.createElement('button');
+        button_edit.className = "edit";
+        button_edit.innerHTML = "Edit";
+        buttons_div.appendChild(button_edit);
+        var button_remove = document.createElement('button');
+        button_remove.className = "remove";
+        button_remove.innerHTML = "Remove";
+        buttons_div.appendChild(button_remove);
+        item_element.appendChild(checkbox);
+        item_element.appendChild(item_content);
+        item_element.appendChild(buttons_div);
+        list_element.appendChild(item_element);
+        input.value = '';
+        button_edit.addEventListener("click", function () {
+            if (button_edit.innerText.toLowerCase() == 'edit') {
+                item_content_input.removeAttribute('readonly');
+                item_content_input.focus();
+                button_edit.innerText = 'Save';
+            }
+            else {
+                item_content_input.readOnly = true;
+                button_edit.innerText = 'Edit';
+            }
         });
-
-        //Adding the content
-        item.appendChild( ( )=>{
-            let content_div = document.createElement("div");
-            content_div.setAttribute("class", "content");
-
-            content_div.appendChild( ( ) => {
-                let text = document.createElement("input");
-                text.setAttribute("type", "text");
-                text.setAttribute("class", "text");
-                text.setAttribute("value", content);
-
-                return text;
-            });
-
-            return content;
+        button_remove.addEventListener('click', function () {
+            list_element.removeChild(item_element);
         });
-
-        //Adding the buttons
-        item.appendChild( ( ) =>{
-            let buttons = document.createElement("div");
-
-            buttons.appendChild( ( ) =>{
-                let edit = document.createElement("button");
-                edit.setAttribute("class", "edit");
-                edit.setAttribute("content", "Edit");
-
-                return edit;
-            });
-            buttons.appendChild( ( ) =>{
-                let remove = document.createElement("button");
-                edit.setAttribute("class", "remove");
-                edit.setAttribute("content", "Remove");    
-    
-                return remove;
-            });
-
-            return buttons;
-        });        
-    
-        return item;
     });
-}
-
-SUBMIT_BUTTON.addEventListener("click", add());
-
-
-
+});

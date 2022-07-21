@@ -26,7 +26,7 @@ body{
     justify-content: start;
 }
 
-.new-item-form{
+#new-item-form{
     display: flex;
     margin-bottom: 70px;
 }
@@ -91,10 +91,11 @@ input[type="checkbox"]:hover{
     background-color: rgba(44, 44, 44, 0.411);
 }
 
-#item{
+.item{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .content{

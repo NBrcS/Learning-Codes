@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/scripts/script.js" defer></script>
+    <script src="./assets/scripts/script.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>To do List</title>
@@ -14,7 +14,7 @@
         <section class="big-box">
             <h1>Your best To do List</h1>
     
-            <div class="new-item-form">
+            <form id="new-item-form">
                 <input 
                     type="text"
                     id="new-item-input"
@@ -24,34 +24,9 @@
                     type="submit"
                     id="new-item-button"
                     value="Add item">
-            </div>
+            </form>
     
             <section id="item-list-form">
-                
-                <div id="item">
-                    <div class="checkbox">
-                        <input type="checkbox">
-                    </div>
-
-                    <div class="content">
-                        <input 
-                            type="text"
-                            class="text"
-                            value="my task to do"
-                            readonly
-                            >
-    
-                    </div>
-                    <div class="buttons">
-                        <button class="edit">
-                            Edit
-                        </button>
-                        <button class="remove">
-                            Remove
-                        </button>
-                    </div>
-                </div>
-
     
             </section>        
                 
