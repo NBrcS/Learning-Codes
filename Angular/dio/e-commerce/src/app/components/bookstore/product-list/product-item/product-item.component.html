@@ -1,0 +1,31 @@
+<div class="card shadow-sm" style="margin-bottom: 10px">
+    <img
+        class="bd-placeholder-img card-img-top"
+        width="100%"
+        src="{{ book.image }}"
+        alt="book image"
+    />
+
+    <div class="card-body">
+        <h5>
+            {{ book.title }}
+        </h5>
+        <h6 class="card-text">
+            {{ book.subtitle }}
+        </h6>
+        <p class="card-text">
+            {{ book.price }}
+        </p>
+
+        <div class="btn-group">
+            <button
+                class="btn btn-success"
+                type="button"
+                style="margin-right: 5px"
+            >
+                Buy
+            </button>
+            <button class="btn btn-outline-dark" type="button">Details</button>
+        </div>
+    </div>
+</div>
