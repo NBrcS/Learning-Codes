@@ -1,0 +1,76 @@
+<div class="card w-100 my-5">
+    <div class="card-body">
+        <h1 class="card-title text-center">User form</h1>
+        <form [formGroup]="userForm">
+            <div class="row my-4">
+                <div
+                    class="form-floating mb-3"
+                    style="width: 50%; padding-left: 3px"
+                >
+                    <input
+                        formControlName="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Type it your name"
+                    />
+                    <label for="name">Name</label>
+                </div>
+                <div
+                    class="form-floating"
+                    style="width: 50%; padding-left: 3px"
+                >
+                    <input
+                        formControlName="secondName"
+                        type="text"
+                        class="form-control"
+                        id="secondName"
+                        placeholder="Type it your second name"
+                    />
+                    <label for="secondName">Second name</label>
+                </div>
+
+                <div class="row my-4">
+                    <div class="form-floating mb-3" style="padding-left: 3px">
+                        <input
+                            formControlName="age"
+                            type="number"
+                            class="form-control"
+                            id="age"
+                            placeholder="Type it your age"
+                        />
+                        <label for="age">Age</label>
+                    </div>
+                    <div class="form-floating" style="padding-left: 3px">
+                        <input
+                            formControlName="work"
+                            type="text"
+                            class="form-control"
+                            id="age"
+                            placeholder="Type it your work"
+                        />
+                        <label for="age">Work</label>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="form-group col-12 mt-4">
+                        <button
+                            type="button"
+                            class="btn btn-outline-success float-start"
+                            (click)="actionButton()"
+                        >
+                            Send
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-outline-danger float-end"
+                            [routerLink]="['']"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
