@@ -3,7 +3,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class FrameWithLabel extends JFrame{
-    FrameWithLabel(){
+    public FrameWithLabel(){
 
         ImageIcon icon = new ImageIcon("img.png");
         JLabel label = new JLabel();
