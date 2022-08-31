@@ -5,6 +5,11 @@ def will_return(prompt):
     B_count = 0
 
     chars = prompt.split()
+    
+    # Apenas separei as letras da string em um array
+    # e iterei esse array pra contar o numero de vezes que
+    # cada comando foi executado, depois avaliei se 
+    # em cima era igual a em baixo, e se esquerda era igual a direita
 
     for letter in chars:
         if letter.upper() == 'D':
