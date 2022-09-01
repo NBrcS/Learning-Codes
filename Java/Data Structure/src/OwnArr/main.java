@@ -20,5 +20,8 @@ public class main {
 
         System.out.println(arr.delete(3));
         System.out.println(arr.toString());
+
+        System.out.println(arr.lastIndexOf("testing"));
+        System.out.println(arr.contains("0"));
     }
 }

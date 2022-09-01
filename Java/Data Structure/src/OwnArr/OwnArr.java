@@ -27,6 +27,18 @@ public class OwnArr<T>{
         }
         return -1;
     }
+    public boolean contains(T search){
+        return this.have(search) != -1;
+    }
+    public int lastIndexOf(T search){
+        for(int i = this.size - 1; i >= 0; i--){
+            if(search.equals(this.arr[i])){
+                return i;
+            }
+        }
+        return -1;
+
+    }
     public boolean add(T item, int index){
         this.increaseCapacity();
 
@@ -65,6 +77,16 @@ public class OwnArr<T>{
         this.size--;
 
         return true;
+    }
+    public boolean delete(T item){
+        if(this.have(item) != -1){
+            return this.delete(this.have(item));
+        }
+        else return false;
+    }
+    public void deleteAll(){
+        this.arr = (T[]) new Object[this.arr.length];
+        this.size = 0;
     }
     private boolean increaseCapacity(){
         if(this.arr.length == this.size){
