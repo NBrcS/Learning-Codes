@@ -9,7 +9,7 @@ public class OwnStack<T> extends EstruturaEstatica{
         super.elementos = (T[])new Object[size];
     }
 
-    public void stacks(T item){
+    public void stacks(String item){
         super.aumentaCapacidade();
 
         super.elementos[super.tamanho] = item;
